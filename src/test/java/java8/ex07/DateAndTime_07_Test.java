@@ -28,13 +28,20 @@ public class DateAndTime_07_Test {
 
 		// TODO transformer la date en LocalDate
 		ZoneId currentZone = ZoneId.systemDefault();
-		LocalDateTime result = LocalDateTime.ofInstant(instant, currentZone);
+		LocalDate result = LocalDateTime.ofInstant(instant, currentZone).toLocalDate();
+		// ceci aussi est possible :
+		LocalDateTime result2 = LocalDateTime.ofInstant(instant, currentZone);
+
 
 		// TODO valoriser les différentes variables afin de rendre le test passant
 
 		assertThat(result.getYear(), is(2017));
 		assertThat(result.getMonth(), is(Month.FEBRUARY));
 		assertThat(result.getDayOfMonth(), is(12));
+		
+		assertThat(result2.getYear(), is(2017));
+		assertThat(result2.getMonth(), is(Month.FEBRUARY));
+		assertThat(result2.getDayOfMonth(), is(12));
 
 	}
 }
