@@ -15,12 +15,12 @@ public class Method_02_Test {
 	// tag::IDao[]
 	interface IDao {
 		List<Person> findAll();
-		String format();
+//		String format();
 
 		// TODO créer une méthode String format()
 		// TODO la méthode retourne une chaîne de la forme [<nb_personnes> persons]
 		// TODO exemple de résultat : "[14 persons]", "[30 persons]"
-		public static String format(List<Person> listePersonnes) {
+		public default  String format(List<Person> listePersonnes) {
 //			List<Person> listePersonnes = findAll();
 
 			return "[" + listePersonnes.size() + " persons]";
@@ -46,7 +46,7 @@ public class Method_02_Test {
 		
 		
 		public String format() {
-			return this.getClass().getSimpleName() + IDao.format(findAll());
+			return this.getClass().getSimpleName() + IDao.super.format(findAll());
 		}
 
 	}

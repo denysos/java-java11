@@ -1,5 +1,7 @@
 package java8.ex01;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -64,7 +66,7 @@ public class Method_01_Test {
 //        daoA.findAll();
 		result = daoA.sumAge();
 
-		assert result == 210;
+		assertEquals(210, result);
 	}
 
 	@Test
@@ -76,7 +78,7 @@ public class Method_01_Test {
 		int result = 0;
 		result = daoB.sumAge();
 
-		assert result == 5050;
+		assertEquals(5050, result);
 
 	}
 }
